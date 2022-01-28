@@ -6,7 +6,7 @@ function App() {
 	const [List, setList] = useState(def);
 
 	const Transform = (array) => {
-		const REGEX = /^[0-9\s]*$/;
+		const REGEX = /^[0-9\s.-]*$/;
 		if (!REGEX.test(array)) {
 			alert('NaN!');
 			return;
