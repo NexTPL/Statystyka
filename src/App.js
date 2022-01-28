@@ -6,9 +6,9 @@ function App() {
 	const [List, setList] = useState(def);
 
 	const Transform = (array) => {
-		const REGEX = /^[0-9\s.-]*$/;
+		const REGEX = /^(-?\d*\.?\d+\s{1})*(-?\d*\.?\d+)?\s?$/;
+		if (array.length === 0) setList(def);
 		if (!REGEX.test(array)) {
-			alert('NaN!');
 			return;
 		}
 		array = array.trim();
@@ -17,7 +17,6 @@ function App() {
 			return;
 		}
 		array = array.split(' ');
-		array = array.filter((n) => n !== '');
 		for (let i in array) {
 			array[i] = Number(array[i]);
 		}
